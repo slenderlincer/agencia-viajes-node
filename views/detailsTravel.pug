@@ -1,0 +1,40 @@
+extends ./layout/index
+
+block container
+    main.container.mt-5 
+        .row 
+            .col-md-5
+                img(src=`/img/destinos_${viaje.imagen}_ln.jpg`,alt="imagen viaje", class="img-fluid")
+            .col-md-7
+                h1 #{viaje.titulo}
+                p 
+                    svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
+                        path(d='M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5')
+                        path(d='M16 3v4')
+                        path(d='M8 3v4')
+                        path(d='M4 11h16')
+                        path(d='M19 22v-6')
+                        path(d='M22 19l-3 -3l-3 3')
+
+                    | #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+
+                p 
+                    svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
+                        path(d='M10 14l11 -11')
+                        path(d='M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5')
+
+                    | #{viaje.disponibles} Disponibles
+
+                p 
+                    svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
+                        path(d='M16 6m-5 0a5 3 0 1 0 10 0a5 3 0 1 0 -10 0')
+                        path(d='M11 6v4c0 1.657 2.239 3 5 3s5 -1.343 5 -3v-4')
+                        path(d='M11 10v4c0 1.657 2.239 3 5 3s5 -1.343 5 -3v-4')
+                        path(d='M11 14v4c0 1.657 2.239 3 5 3s5 -1.343 5 -3v-4')
+                        path(d='M7 9h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5')
+                        path(d='M5 15v1m0 -8v1')
+                    
+                    | #{viaje.precio} Dolares
+
+
+                p= viaje.descripcion 

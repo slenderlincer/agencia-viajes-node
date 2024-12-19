@@ -1,0 +1,29 @@
+.row.proximos-viajes 
+    each viaje in viajes 
+        .col-md-6.col-lg-4.mb-4 
+            .card 
+                img.card-img-top(src=`img/destinos_${viaje.imagen}.jpg`)
+                .card-body
+                    h2= viaje.titulo
+                    p 
+                        svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
+                            path(d='M12.5 21h-6.5a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v5')
+                            path(d='M16 3v4')
+                            path(d='M8 3v4')
+                            path(d='M4 11h16')
+                            path(d='M19 22v-6')
+                            path(d='M22 19l-3 -3l-3 3')
+
+                        | #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+
+                    p 
+                        svg(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' width='24' height='24' stroke-width='2')
+                            path(d='M10 14l11 -11')
+                            path(d='M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5')
+
+                        | #{viaje.disponibles} Disponibles
+
+                    p= viaje.descripcion 
+
+                    a(href=`travels/${viaje.slug}`, class = "btn btn-success btn-block") Mas informacion
+            
